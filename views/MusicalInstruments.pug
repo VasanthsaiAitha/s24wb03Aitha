@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  - let results = [{ instrument_name: 'Guitar', condition: 'New', price: 500 },{ instrument_name: 'Piano', condition: 'Used', price: 1200 },{ instrument_name: 'Violin', condition: 'Refurbished', price: 300 }]
+
+  .container-fluid
+    .row
+      each item in results
+        .col-sm-4
+          .instrument
+            h3 #{item.instrument_name}
+            p Condition: #{item.condition}
+            p Price: #{item.price}
+          .col-sm-2
+            p Instrument Name: #{item.instrument_name}
+            p Condition: #{item.condition}
+            p Price: #{item.price}
