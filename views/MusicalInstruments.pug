@@ -5,9 +5,9 @@ block content
 
   .container-fluid
     .row
-      each item in results
+      each item, index in results
         .col-sm-4
-          .instrument
+          .instrument(onclick=`buy(${index})`)
             h3 #{item.instrument_name}
             p Condition: #{item.condition}
             p Price: #{item.price}
@@ -15,3 +15,8 @@ block content
             p Instrument Name: #{item.instrument_name}
             p Condition: #{item.condition}
             p Price: #{item.price}
+
+  script.
+    function buy(index) {
+      alert("You purchased item " + index);
+    }
